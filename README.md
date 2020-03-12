@@ -13,3 +13,4 @@ Se puede disponer de toda esta configuración usando la [configuración comparti
 
 Después se siguieron los siguiente pasos:
 1. Creación de bean por XML
+1. Escaneando componentes con anotaciones `@Component`

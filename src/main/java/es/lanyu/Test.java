@@ -1,5 +1,8 @@
 package es.lanyu;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Test {
 
     protected String testString = "String por defecto";

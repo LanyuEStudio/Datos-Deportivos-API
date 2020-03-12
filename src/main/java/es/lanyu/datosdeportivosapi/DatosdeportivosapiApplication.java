@@ -14,7 +14,7 @@ public class DatosdeportivosapiApplication {
 //		SpringApplication.run(DatosdeportivosapiApplication.class, args);
 	    ConfigurableApplicationContext context = 
 	            new ClassPathXmlApplicationContext( 
-	            									new String[]{"config.xml"}
+	                                                new String[]{"config-scan.xml"}
 	                                            );
 	    Test test = new Test();
 	    test.init();
