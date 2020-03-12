@@ -19,3 +19,4 @@ Después se siguieron los siguiente pasos:
 
 1. Cambiando paquete base para escanear
    * Ya no se sobreescribe. No detecta fuera del paquete base
+1. Desambiguar varias beans por identificador
