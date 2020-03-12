@@ -14,3 +14,5 @@ Se puede disponer de toda esta configuración usando la [configuración comparti
 Después se siguieron los siguiente pasos:
 1. Creación de bean por XML
 1. Escaneando componentes con anotaciones `@Component`
+1. Sobreescribiendo `@Component` con XML
+   * Se puede invertir el orden de los ficheros y ver los cambios en el log
