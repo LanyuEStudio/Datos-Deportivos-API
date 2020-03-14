@@ -1,7 +1,9 @@
-package es.lanyu.datosdeportivosapi;
+package es.lanyu.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import es.lanyu.Test;
 
 @Configuration
 public class JavaConfig {

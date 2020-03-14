@@ -22,3 +22,5 @@ Después se siguieron los siguiente pasos:
 1. Desambiguar varias beans por identificador
 1. `@Bean` en `@Configuration`
    * Ver cómo se crean todas las dependencias de las tres formas
+1. Refactorizar a Spring Boot
+   
