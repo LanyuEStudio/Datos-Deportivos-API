@@ -22,8 +22,8 @@ public class DatosdeportivosapiApplication {
 	    
 //	    test = context.getBean(Test.class);
 //	    test = context.getBean("test", Test.class);
-//	    test = context.getBean("anotacion", Test.class);
-	    test = context.getBean("config", Test.class);
+	    test = context.getBean("anotacion", Test.class);
+//	    test = context.getBean("config", Test.class);
 	    test.init();
 	    System.out.println(test.getClass().getName());
 	    
