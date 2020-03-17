@@ -2,13 +2,15 @@ package es.lanyu.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import es.lanyu.Test;
 
 @Configuration
 public class JavaConfig {
 
-    @Bean(name="config")
+    @Bean//(name="config")
+    @Primary
     public Test miTest() {
         Test test = new Test() {
             int llamadas = 0;

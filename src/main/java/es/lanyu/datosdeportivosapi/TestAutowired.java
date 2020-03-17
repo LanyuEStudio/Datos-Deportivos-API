@@ -18,11 +18,13 @@ public class TestAutowired extends Test {
 	Test testInyectado;
 	
 	@Autowired
-	private void setTestInyectado(@Qualifier("config") Test testPorSetter,
-								  @Qualifier("test") Test testPorSetter2) {
-		testInyectado = new Test();
-		testInyectado.setTestString(testPorSetter.getTestString()
-				+ " y " + testPorSetter2.getTestString());
+	private void setTestInyectado(//@Qualifier("config") Test testPorSetter,
+								  @Qualifier("test") Test testPorSetter2,
+								  Test testPrincipal) {
+		testInyectado = testPrincipal;
+//		testInyectado = new Test();
+//		testInyectado.setTestString(testPorSetter.getTestString()
+//				+ " y " + testPorSetter2.getTestString());
 	}
 	
 	@Autowired(required=false)
