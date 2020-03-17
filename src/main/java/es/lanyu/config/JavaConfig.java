@@ -20,6 +20,7 @@ public class JavaConfig {
             }
             
         };
+        test.setTestString("Por configuracion");
         test.init();
         
         return test;
