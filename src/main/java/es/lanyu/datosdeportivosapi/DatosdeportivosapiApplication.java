@@ -1,5 +1,7 @@
 package es.lanyu.datosdeportivosapi;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,19 +17,18 @@ import es.lanyu.config.JavaConfig;
 @Import({JavaConfig.class})
 @PropertySource({"application2.properties"})
 public class DatosdeportivosapiApplication {
+	private static final Logger log = LoggerFactory.getLogger(DatosdeportivosapiApplication.class);
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context =
 				SpringApplication.run(DatosdeportivosapiApplication.class, args);
 	    
 		Test test;
-	    
+	    String nombre = "anotacion";//"test";//"config";//
 //	    test = context.getBean(Test.class);
-//	    test = context.getBean("test", Test.class);
-	    test = context.getBean("anotacion", Test.class);
-//	    test = context.getBean("config", Test.class);
+	    test = context.getBean(nombre, Test.class);
 	    test.init();
-	    System.out.println(test.getClass().getName());
+	    log.debug("Recuperado bean \"{}\" del tipo {}", nombre, test.getClass().getName());
 	    
 	    context.close();
 	}

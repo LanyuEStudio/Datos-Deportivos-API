@@ -1,9 +1,12 @@
 package es.lanyu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Test {
+	private final Logger log = LoggerFactory.getLogger(Test.class);
 
     protected String testString = "String por defecto";
     
@@ -18,6 +21,6 @@ public class Test {
 
     // metodo que se llamara al iniciar opcionalmente
     public void init() {
-        System.out.println(testString);
+        log.info("Llamado init(): {}", testString);
     }
 }
