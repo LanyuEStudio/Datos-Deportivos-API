@@ -24,7 +24,7 @@ public class DatosdeportivosapiApplication {
 				SpringApplication.run(DatosdeportivosapiApplication.class, args);
 	    
 		Test test;
-	    String nombre = "anotacion";//"test";//"config";//
+	    String nombre = "autowired";//"anotacion";//"test";//"config";//
 //	    test = context.getBean(Test.class);
 	    test = context.getBean(nombre, Test.class);
 	    test.init();
