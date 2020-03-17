@@ -11,12 +11,13 @@ import es.lanyu.Test;
 public class TestAutowired extends Test {
 
 	private final Logger log = LoggerFactory.getLogger(TestAutowired.class);
-
+	
 	Test testInyectado;
-
+	
+	@Autowired(required=false)
 	public TestAutowired() {}
 	
-	@Autowired
+	@Autowired(required=false)
 	public TestAutowired(es.lanyu.datosdeportivosapi.Test testPorConstructor) {
 		testInyectado = testPorConstructor;
 	}
