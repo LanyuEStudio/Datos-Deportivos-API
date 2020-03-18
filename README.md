@@ -23,4 +23,13 @@ Después se siguieron los siguiente pasos:
 1. `@Bean` en `@Configuration`
    * Ver cómo se crean todas las dependencias de las tres formas
 1. Refactorizar a Spring Boot
-   
+1. Propiedades y `@Value`
+1. Logs
+1. Inyección de Dependencias: `@Autowired`
+
+El código hasta este punto está etiquetado en la [release v0.0.1](https://github.com/LanyuEStudio/spring-ejemplo-contenedor/releases/tag/v0.0.1).
+
+### Pasando a supuesto de Datos Deportivos
+A continuación de lo anterior se borra todo el código de ejemplo de Spring básico y se añade la dependencia [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) para continuar con persistencia con JPA, Spring Data REST para ofrecer una API RESTful HATEOAS, formateo de salida con Jackson y Entity Listener. Se ven distintos ejemplos en la forma de hacerlo (XML, Configuración Java y Anotaciones).
+
+Para continuar desde aquí hay que hacer clone de este repositorio y situarse en el commit correspondiente a la [release v0.0.2](https://github.com/LanyuEStudio/spring-ejemplo-contenedor/releases/tag/v0.0.2). También hay que hacer clone a la misma carpeta de [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) porque es multiproyecto y seguramente se toquen cosas de ese proyecto para comparar resultados. Una vez se tiene eso se ejecuta la tarea `bootRun` desde este proyecto para ver que todas las dependencias se han resuelto. Finalmente se prueba desde el IDE que se use que detecta los tipos del proyecto datos-deportivos (por ejemplo se ve Partido, Participante, Gol, etc... uno cualquiera es suficiente).
