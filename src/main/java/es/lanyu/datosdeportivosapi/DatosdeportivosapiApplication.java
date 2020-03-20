@@ -28,7 +28,7 @@ public class DatosdeportivosapiApplication {
 		
 		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
 		usuarioDAO.save(generaUsuario());
-		List<Usuario> usuarios = usuarioDAO.findAll();
+		List<Usuario> usuarios = usuarioDAO.findByCorreoContaining("5");
 		usuarios.stream().map(Usuario::toString).forEach(log::info);
 		
 		context.close();
