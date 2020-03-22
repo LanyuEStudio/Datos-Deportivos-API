@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://logback.qos.ch/manual/configuration.html -->
+<configuration>
+
+    <!-- Se pueden incluir archivos con configuracion ya hecha:
+	http://logback.qos.ch/manual/configuration.html#fileInclusion 
+	https://raw.githubusercontent.com/spring-projects/spring-boot/master/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml-->
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/> 
+	
+	<!-- Tambien activar bloques por perfiles:
+	https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#profile-specific-configuration 
+	y tener acceso a propiedades de Spring:
+	https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#environment-properties -->
+	<springProperty scope="context" name="profile" source="spring.profiles.active" defaultValue="default"/>
+	
+	<property file="src/main/resources/application.properties" />
+	<property name="nombreApp" value="${spring.application.name}" />
+    
+	<property name="lanyu.formato-fecha" value="%date{ddMMM HH:mm:ss, UTC}Z" />
+	<property name="lanyu.formato-log" value="${lanyu.formato-fecha} [%thread ${PID:- }] %-5level %logger{15} => %msg %n" />
+	<property name="lanyu.formato-log-color" value="${lanyu.formato-fecha} [%thread ${PID:- }] %highlight(%-5level) %cyan(%logger{15}) %yellow(=>) %msg %n" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>${lanyu.formato-log}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Descomentar para crear fichero log
+	<property name="lanyu.log.path" value="log" />
+    <property name="lanyu.log.file" value="${nombreApp}" />
+    <property name="lanyu.log.dinamico.path" value="${lanyu.log.path}/${lanyu.log.file}-${profile}.log" />
+    
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${lanyu.log.dinamico.path}</file>
+		<encoder>
+			<pattern>${FILE_LOG_PATTERN}
+			</pattern>
+		</encoder>
+	</appender> -->
+
+	<!-- Establecer los paquetes con diferentes niveles de log -->
+	<logger name="es.lanyu" level="DEBUG" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<!-- Descomentar para volcar registros en fichero <appender-ref ref="FILE" /> -->
+	</root>
+
+</configuration>

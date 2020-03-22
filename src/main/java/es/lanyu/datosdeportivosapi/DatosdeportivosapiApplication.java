@@ -15,7 +15,7 @@ import es.lanyu.usuarios.repositorios.Usuario;
 import es.lanyu.usuarios.repositorios.UsuarioDAO;
 
 @SpringBootApplication
-@PropertySource({"logging.properties"})
+//@PropertySource({"otro.properties"})
 @ImportResource({"classpath:config/jpa-config.xml"})
 //@EnableJpaRepositories("${es.lanyu.jpa-package}")// usando propiedad, tambien se puede usar una clase
 //@EntityScan("es.lanyu.usuarios.repositorios")// o definirlo literal. ambos admiten varios valores
