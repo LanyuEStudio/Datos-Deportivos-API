@@ -17,8 +17,7 @@
 		<!-- Decimos como se mapean de Java a BD y viceversa -->
 		<property name="mappingResources">
 			<list>
-				<value>jpa/IdentificableString.orm.xml</value>
-				<value>jpa/AbstractNombrable.orm.xml</value>
+				<value>jpa/Usuario.orm.xml</value>
 			</list>
 		</property>
 		<property name="jpaVendorAdapter">
