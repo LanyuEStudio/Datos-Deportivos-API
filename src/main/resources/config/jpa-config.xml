@@ -8,6 +8,7 @@
                            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 	<jpa:repositories base-package="${es.lanyu.jpa-package}" />
+	<jpa:repositories base-package="es.lanyu.participante.repositorios" />
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -17,6 +18,9 @@
 		<!-- Decimos como se mapean de Java a BD y viceversa -->
 		<property name="mappingResources">
 			<list>
+				<value>jpa/IdentificableString.orm.xml</value>
+				<value>jpa/AbstractNombrable.orm.xml</value>
+				<value>jpa/Participante.orm.xml</value>
 				<value>jpa/Usuario.orm.xml</value>
 			</list>
 		</property>
