@@ -1,0 +1,273 @@
+*** LIGA ESPAÑOLA ***
+{nombre:"Athletic Club",id:"ATHCLU(ESP)"}
+{nombre:"Getafe",id:"GETAFE(ESP)"}
+{nombre:"Barcelona",id:"FCBARC(ESP)"}
+{nombre:"Betis",id:"BETIS(ESP)"}
+{nombre:"Deportivo",id:"DEPORT(ESP)"}
+{nombre:"Real Madrid",id:"RMADRI(ESP)"}
+{nombre:"Levante",id:"LEVANT(ESP)"}
+{nombre:"Villareal",id:"VIREAL(ESP)"}
+{nombre:"Málaga",id:"MALAGA(ESP)"}
+{nombre:"Eibar",id:"EIBAR(ESP)"}
+{nombre:"Leganés",id:"LEGANE(ESP)"}
+{nombre:"Alavés",id:"ALAVES(ESP)"}
+{nombre:"Valencia",id:"VALENC(ESP)"}
+{nombre:"Las Palmas",id:"LASPAL(ESP)"}
+{nombre:"Celta",id:"CELTAV(ESP)"}
+{nombre:"Real Sociedad",id:"RSOCIE(ESP)"}
+{nombre:"Girona",id:"GIRONA(ESP)"}
+{nombre:"Atlético de Madrid",id:"ATLMAD(ESP)"}
+{nombre:"Sevilla",id:"SEVILA(ESP)"}
+{nombre:"Español",id:"ESPANO(ESP)"}
+*** SEGUNDA ESPAÑOLA ***
+{nombre:"Cádiz",id:"CADIZ(ESP)"}
+{nombre:"Gimnastic",id:"NASTIC(ESP)"}
+{nombre:"Huesca",id:"HUESCA(ESP)"}
+{nombre:"Sevilla Atlético",id:"SEVATL(ESP)"}
+{nombre:"Barcelona B",id:"BARCAB(ESP)"}
+{nombre:"Córdoba",id:"CORDOB(ESP)"}
+{nombre:"Sporting",id:"SPGIJO(ESP)"}
+{nombre:"Oviedo",id:"OVIEDO(ESP)"}
+{nombre:"Almería",id:"ALMERI(ESP)"}
+{nombre:"Lorca",id:"LORCA(ESP)"}
+{nombre:"Tenerife",id:"TENERI(ESP)"}
+{nombre:"Granada B",id:"GRANAB(ESP)"}
+{nombre:"Zaragoza",id:"ZARAGO(ESP)"}
+{nombre:"Alcorcón",id:"ALCORC(ESP)"}
+{nombre:"Cultural Leonesa",id:"CULEON(ESP)"}
+{nombre:"Valladolid",id:"VALLAD(ESP)"}
+{nombre:"Albacete",id:"ALBACE(ESP)"}
+{nombre:"Lugo",id:"LUGO(ESP)"}
+{nombre:"Rayo Vallecano",id:"RAYOVA(ESP)"}
+{nombre:"Osasuna",id:"OSASUN(ESP)"}
+{nombre:"Reus",id:"REUS(ESP)"}
+{nombre:"Numancia",id:"NUMANC(ESP)"}
+*** PREMIER ***
+{nombre:"Manchester City",id:"MANCIT(ING)"}
+{nombre:"Liverpool",id:"LIVERP(ING)"}
+{nombre:"Arsenal",id:"ARSENA(ING)"}
+{nombre:"Bournemouth",id:"BOURNE(ING)"}
+{nombre:"Brighton",id:"BRIGHT(ING)"}
+{nombre:"West Brom",id:"WESBRO(ING)"}
+{nombre:"Everton",id:"EVERTO(ING)"}
+{nombre:"Tottenham",id:"TOTHAM(ING)"}
+{nombre:"Leicester",id:"LESTER(ING)"}
+{nombre:"Chelsea",id:"CHELSE(ING)"}
+{nombre:"Southampton",id:"SOTHAM(ING)"}
+{nombre:"Watford",id:"WATFOR(ING)"}
+{nombre:"Stoke City",id:"STOCIT(ING)"}
+{nombre:"Manchester United",id:"MANUTD(ING)"}
+{nombre:"Burnley",id:"BURNLE(ING)"}
+{nombre:"Crystal Palace",id:"CRYPAL(ING)"}
+{nombre:"Swansea",id:"SWANSE(ING)"}
+{nombre:"Newcastle",id:"NEWCAS(ING)"}
+{nombre:"West Ham",id:"WESHAM(ING)"}
+{nombre:"Huddersfield",id:"HUDFIL(ING)"}
+*** SERIE A ***
+{nombre:"Juventus",id:"JUVENT(ITA)"}
+{nombre:"Chievo",id:"CHIEVO(ITA)"}
+{nombre:"Sampdoria",id:"SAMPDO(ITA)"}
+{nombre:"Roma",id:"ROMA(ITA)"}
+{nombre:"Inter",id:"IMILAN(ITA)"}
+{nombre:"Spal",id:"SPAL(ITA)"}
+{nombre:"Atalanta",id:"ATALAN(ITA)"}
+{nombre:"Sassuolo",id:"SASUOL(ITA)"}
+{nombre:"Cagliari",id:"CAGLIA(ITA)"}
+{nombre:"Crotone",id:"CROTON(ITA)"}
+{nombre:"Lazio",id:"LAZIO(ITA)"}
+{nombre:"Milan",id:"MILAN(ITA)"}
+{nombre:"Udinese",id:"UDINES(ITA)"}
+{nombre:"Génova",id:"GENOA(ITA)"}
+{nombre:"Verona",id:"VERONA(ITA)"}
+{nombre:"Fiorentina",id:"FIOREN(ITA)"}
+{nombre:"Benevento",id:"BENEVE(ITA)"}
+{nombre:"Torino",id:"TORINO(ITA)"}
+{nombre:"Bolonia",id:"BOLONA(ITA)"}
+{nombre:"Nápoles",id:"NAPOLI(ITA)"}
+*** BUNDESLIGA ***
+{nombre:"Hamburgo",id:"HAMBUR(ALE)"}
+{nombre:"RB Leipzig",id:"RBLEIP(ALE)"}
+{nombre:"Monchengladbach",id:"BSIAMO(ALE)"}
+{nombre:"Eintracht Frankfurt",id:"EINFRA(ALE)"}
+{nombre:"Augsburgo",id:"AUGSBU(ALE)"}
+{nombre:"Colonia",id:"FCKOLN(ALE)"}
+{nombre:"Mainz",id:"MAINZ(ALE)"}
+{nombre:"Bayern Leverkusen",id:"BAYLEV(ALE)"}
+{nombre:"Friburgo",id:"FRIBUR(ALE)"}
+{nombre:"Borussia Dortmund",id:"BORDOR(ALE)"}
+{nombre:"Wolfsburgo",id:"WOLFBU(ALE)"}
+{nombre:"Hannover",id:"HANOVE(ALE)"}
+{nombre:"Hoffenheim",id:"HOFFEN(ALE)"}
+{nombre:"Bayern Múnich",id:"BAYMUN(ALE)"}
+{nombre:"Hertha Berlin",id:"HERTHA(ALE)"}
+{nombre:"Werder Bremen",id:"WERBRE(ALE)"}
+{nombre:"Schalke",id:"SCHALK(ALE)"}
+{nombre:"Stuttgart",id:"STUTGA(ALE)"}
+*** BUNDESLIGA 2***
+{nombre:"Dynamo Dresden",id:"DYNDRE(ALE)"}
+{nombre:"Fürth",id:"FURTH(ALE)"}
+{nombre:"Heidenheim",id:"HEIDEN(ALE)"}
+{nombre:"Regensburg",id:"REGENS(ALE)"}
+{nombre:"Beilefeld",id:"ARMBEI(ALE)"}
+{nombre:"Duisburgo",id:"DUISBU(ALE)"}
+{nombre:"Ingolstadt",id:"INGOLS(ALE)"}
+{nombre:"Aue",id:"ERZAUE(ALE)"}
+{nombre:"Kiel",id:"HOLKIE(ALE)"}
+{nombre:"Kaiserlautern",id:"KAISER(ALE)"}
+{nombre:"Braunschweig",id:"BRAUNS(ALE)"}
+{nombre:"Sandhausen",id:"SANHAU(ALE)"}
+{nombre:"Düsseldorf",id:"DUSELD(ALE)"}
+{nombre:"Union Berlin",id:"UNIBER(ALE)"}
+{nombre:"Darmstadt",id:"DARMST(ALE)"}
+{nombre:"Bochum",id:"BOCHUM(ALE)"}
+{nombre:"Núremberg",id:"NUREMB(ALE)"}
+{nombre:"St. Pauli",id:"SPAULI(ALE)"}
+*** JUPILER ***
+{nombre:"Anderlecht",id:"ANDERL(BEL)"}
+{nombre:"Lokeren",id:"LOKERE(BEL)"}
+{nombre:"Mouscron",id:"MUSCRO(BEL)"}
+{nombre:"Club Brujas",id:"CLUBRU(BEL)"}
+{nombre:"Antwerp",id:"ANTWER(BEL)"}
+{nombre:"St. Truiden",id:"STRUID(BEL)"}
+{nombre:"Waasland Beveren",id:"WASBEV(BEL)"}
+{nombre:"Eupen",id:"EUPEN(BEL)"}
+{nombre:"Zulte Waregem",id:"ZULWAR(BEL)"}
+{nombre:"Kortrijk",id:"KORTRI(BEL)"}
+{nombre:"Gent",id:"GENT(BEL)"}
+{nombre:"Genk",id:"GENK(BEL)"}
+{nombre:"Standard Liege",id:"STALIE(BEL)"}
+{nombre:"Charleroi",id:"CHARLE(BEL)"}
+{nombre:"Mechelen",id:"MECHEL(BEL)"}
+{nombre:"Oostende",id:"OSTEND(BEL)"}
+*** EREDIVISIE ***
+{nombre:"Heracles",id:"HERACL(HOL)"}
+{nombre:"Feyenord",id:"FEYENO(HOL)"}
+{nombre:"Willem II",id:"WILEM2(HOL)"}
+{nombre:"Ado Den Haag",id:"ADODEN(HOL)"}
+{nombre:"Ajax",id:"AJAX(HOL)"}
+{nombre:"Zwolle",id:"ZWOLLE(HOL)"}
+{nombre:"Excelsior",id:"EXCELS(HOL)"}
+{nombre:"Vitesse",id:"VITESE(HOL)"}
+{nombre:"Heerenveen",id:"HERENV(HOL)"}
+{nombre:"PSV",id:"PSV(HOL)"}
+{nombre:"AZ Alkmaar",id:"AZALKM(HOL)"}
+{nombre:"Breda",id:"BREDA(HOL)"}
+{nombre:"Sparta Rotterdam",id:"SPAROT(HOL)"}
+{nombre:"Twente",id:"TWENTE(HOL)"}
+{nombre:"Utrech",id:"UTRECH(HOL)"}
+{nombre:"Roda",id:"RODA(HOL)"}
+{nombre:"Groningen",id:"GRONIN(HOL)"}
+{nombre:"Venlo",id:"VENLO(HOL)"}
+*** LIGA FRANCESA ***
+{nombre:"Lille",id:"LILLE(FRA)"}
+{nombre:"Burdeos",id:"BURDEO(FRA)"}
+{nombre:"Metz",id:"METZ(FRA)"}
+{nombre:"PSG",id:"PSG(FRA)"}
+{nombre:"Niza",id:"NIZA(FRA)"}
+{nombre:"Mónaco",id:"MONACO(FRA)"}
+{nombre:"Caen",id:"CAEN(FRA)"}
+{nombre:"Dijon",id:"DIJON(FRA)"}
+{nombre:"Troyes",id:"TROYES(FRA)"}
+{nombre:"Touluse",id:"TUOLUS(FRA)"}
+{nombre:"Montepellier",id:"MONTPE(FRA)"}
+{nombre:"Nantes",id:"NANTES(FRA)"}
+{nombre:"Estrasburgo",id:"STRASB(FRA)"}
+{nombre:"Amiens",id:"AMIENS(FRA)"}
+{nombre:"St. Etienne",id:"SETIEN(FRA)"}
+{nombre:"Angers",id:"ANGERS(FRA)"}
+{nombre:"Lyon",id:"LYON(FRA)"}
+{nombre:"Guingamp",id:"GUIGAM(FRA)"}
+{nombre:"Marsella",id:"MARSEL(FRA)"}
+{nombre:"Rennes",id:"RENNES(FRA)"}
+*** LIGA FRANCESA ***
+{nombre:"Ajaccio",id:"AJACIO(FRA)"}
+{nombre:"Nimes",id:"NIMES(FRA)"}
+{nombre:"Auxerre",id:"AUXERR(FRA)"}
+{nombre:"Tours",id:"TOURS(FRA)"}
+{nombre:"Chateauroux",id:"CHATOR(FRA)"}
+{nombre:"Quevilly",id:"QUEVIL(FRA)"}
+{nombre:"Clermont",id:"CLERMO(FRA)"}
+{nombre:"Bourg Peronnas",id:"BOURGP(FRA)"}
+{nombre:"GFC Ajaccio",id:"GAJACI(FRA)"}
+{nombre:"Sochaux",id:"SOCHAU(FRA)"}
+{nombre:"Le Havre",id:"LEHAVR(FRA)"}
+{nombre:"Orleans",id:"ORLEAN(FRA)"}
+{nombre:"Valenciennes",id:"VALENC(FRA)"}
+{nombre:"Nancy",id:"NANCY(FRA)"}
+{nombre:"Niort",id:"NIORT(FRA)"}
+{nombre:"Paris FC",id:"PARISF(FRA)"}
+{nombre:"Lens",id:"LENS(FRA)"}
+{nombre:"Lorient",id:"LORIEN(FRA)"}
+{nombre:"Reims",id:"REIMS(FRA)"}
+{nombre:"Brest",id:"STBRES(FRA)"}
+*** PARA COMPETICIONES EUROPEAS ***
+*** LIGA PORTUGUESA ***
+{nombre:"Benfica",id:"BENFIC(POR)"}
+{nombre:"Oporto",id:"OPORTO(POR)"}
+{nombre:"SC Braga",id:"SBRAGA(POR)"}
+{nombre:"Sporting",id:"SPORTI(POR)"}
+{nombre:"Guimaraes",id:"GUIMAR(POR)"}
+*** LIGA ESCOCESA ***
+{nombre:"Celtic",id:"CELTIC(ESC)"}
+*** LIGA RUSA ***
+{nombre:"CSKA Moscú",id:"CSKAMO(RUS)"}
+{nombre:"Spartak Moscú",id:"SPARMO(RUS)"}
+{nombre:"Lokomotiv Moscú",id:"LOKOMO(RUS)"}
+{nombre:"Zenit San Petersburgo",id:"ZENISP(RUS)"}
+*** LIGA GRIEGA ***
+{nombre:"Olympiacos",id:"OLYMPI(GRE)"}
+{nombre:"AEK Atenas",id:"AEKATE(GRE)"}
+*** LIGA TURCA ***
+{nombre:"Besiktas",id:"BESIKT(TUR)"}
+{nombre:"Basaksehir",id:"ISTBAS(TUR)"}
+{nombre:"Konyaspor",id:"KONYAS(TUR)"}
+*** LIGA UKRANIANA ***
+{nombre:"Dínamo de Kiev",id:"DYNKIE(UKR)"}
+{nombre:"Shakhtar",id:"SHAKTA(UKR)"}
+{nombre:"Zorya",id:"ZORYA(UKR)"}
+*** LIGA NORUEGA ***
+{nombre:"Rosenborg",id:"ROSENB(NOR)"}
+*** LIGA ISRAELI ***
+{nombre:"Maccabi Tel Aviv",id:"MACTEL(ISR)"}
+{nombre:"Hapoel Beer Sheva",id:"HAPBES(ISR)"}
+*** LIGA KAZAJA ***
+{nombre:"Astana",id:"ASTANA(KAZ)"}
+*** LIGA BULGARA ***
+{nombre:"Ludogorets",id:"LUDOGO(BUL)"}
+*** LIGA CHIPRIOTA ***
+{nombre:"Apollon",id:"APOLLO(CHI)"}
+{nombre:"APOEL",id:"APOEL(CHI)"}
+*** LIGA AUSTRIACA ***
+{nombre:"Austria Viena",id:"AUSVIE(AUT)"}
+{nombre:"RB Salzburgo",id:"RBSALZ(AUT)"}
+*** LIGA DANESA ***
+{nombre:"FC Copenague",id:"FCCOPE(DIN)"}
+*** LIGA ALBANESA ***
+{nombre:"Skenderbeu",id:"SKENDE(ALB)"}
+*** LIGA CROATA ***
+{nombre:"Rijeka",id:"RIJEKA(CRO)"}
+*** LIGA CHECA ***
+{nombre:"Slavia Praga",id:"SLPRAG(RCH)"}
+{nombre:"Zlin",id:"ZLIN(RCH)"}
+{nombre:"Victoria Pilsen",id:"PLZEN(RCH)"}
+*** LIGA SUIZA ***
+{nombre:"Young Boys",id:"YOUBOY(SUI)"}
+{nombre:"Lugano",id:"LUGANO(SUI)"}
+{nombre:"Basilea",id:"BASILE(SUI)"}
+*** LIGA RUMANA ***
+{nombre:"Steaua Bucarest",id:"STEAUA(RUM)"}
+*** LIGA SERBIA ***
+{nombre:"Partizan",id:"PARTIZ(SER)"}
+{nombre:"Estrella Roja",id:"ESTROJ(SER)"}
+*** LIGA MOLDAVA ***
+{nombre:"Sheriff",id:"SHERIF(MOL)"}
+*** LIGA BIELORUSA ***
+{nombre:"BATE",id:"BATEBO(BIE)"}
+*** LIGA MACEDONIA ***
+{nombre:"Vardar",id:"VARDAR(MAC)"}
+*** LIGA SUECA ***
+{nombre:"Östersunds",id:"OSTERS(SUE)"}
+*** LIGA ESLOVENA ***
+{nombre:"Maribor",id:"MARIBO(ESL)"}
+*** LIGA AZERBAYANA ***
+{nombre:"Qarabag",id:"QARABA(AZE)"}
