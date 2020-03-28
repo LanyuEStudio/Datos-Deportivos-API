@@ -21,8 +21,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.lanyu.participante.Participante;
 import es.lanyu.participante.repositorios.ParticipanteDAO;
-import es.lanyu.usuarios.repositorios.Usuario;
-import es.lanyu.usuarios.repositorios.UsuarioDAO;
 
 @SpringBootApplication
 //@PropertySource({"otro.properties"})
@@ -31,20 +29,15 @@ import es.lanyu.usuarios.repositorios.UsuarioDAO;
 //@EntityScan("es.lanyu.usuarios.repositorios")// o definirlo literal. ambos admiten varios valores
 public class DatosdeportivosapiApplication {
 	private static final Logger log = LoggerFactory.getLogger(DatosdeportivosapiApplication.class);
-
+	
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context =
 				SpringApplication.run(DatosdeportivosapiApplication.class, args);
 		
-//		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
-//		usuarioDAO.save(generaUsuario());
-//		List<Usuario> usuarios = usuarioDAO.findByCorreoContaining("6");
-//		usuarios.stream().map(Usuario::toString).forEach(log::info);
-		
 		ObjectMapper mapper = context.getBean(ObjectMapper.class);
 		mapper.addMixIn(Participante.class, MixInParticipantes.class);
 		ParticipanteDAO participanteDAO = context.getBean(ParticipanteDAO.class);
-		cargarParticipanteDesdeArchivo("src/main/resources/participantes.json", mapper, participanteDAO);
+//		cargarParticipanteDesdeArchivo("src/main/resources/participantes.json", mapper, participanteDAO);
 		List<Participante> participantes = participanteDAO.findByNombreContaining("Real");
 		participantes.stream().map(Participante::toString).forEach(log::trace);
 		
@@ -73,12 +66,6 @@ public class DatosdeportivosapiApplication {
 		} catch (Exception e) {
 			log.error("Error leyendo: {}", linea);
 		}
-	}
-	
-	static Usuario generaUsuario() {
-		int numero = 10000;
-		String usuario = "user" + ThreadLocalRandom.current().nextInt(numero, numero*20);
-		return new Usuario(usuario, usuario + "@mail.com");
 	}
 
 }
