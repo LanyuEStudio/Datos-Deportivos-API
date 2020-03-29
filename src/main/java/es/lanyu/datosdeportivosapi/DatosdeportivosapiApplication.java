@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import es.lanyu.eventos.repositorios.PartidoConId;
+import es.lanyu.eventos.repositorios.PartidoDAO;
+import es.lanyu.eventos.repositorios.SucesoConId;
+import es.lanyu.eventos.repositorios.SucesoDAO;
 import es.lanyu.participante.Participante;
 import es.lanyu.participante.repositorios.ParticipanteDAO;
 
@@ -38,10 +43,31 @@ public class DatosdeportivosapiApplication {
 		mapper.addMixIn(Participante.class, MixInParticipantes.class);
 		ParticipanteDAO participanteDAO = context.getBean(ParticipanteDAO.class);
 //		cargarParticipanteDesdeArchivo("src/main/resources/participantes.json", mapper, participanteDAO);
-		List<Participante> participantes = participanteDAO.findByNombreContaining("Real");
+//		List<Participante> participantes = participanteDAO.findByNombreContaining("Real");
+		List<Participante> participantes = participanteDAO.findAll();
 		participantes.stream().map(Participante::toString).forEach(log::trace);
 		
+		PartidoConId partido = new PartidoConId(getParticipanteRandom(participantes), getParticipanteRandom(participantes));
+		PartidoDAO partidoDAO = context.getBean(PartidoDAO.class);
+		partido.addSucesoConId(getSucesoRandom(partido));
+		partidoDAO.save(partido);
+		SucesoDAO sucesoDAO = context.getBean(SucesoDAO.class);
+		sucesoDAO.saveAll(partido.getSucesos().stream().map(s -> (SucesoConId)s).collect(Collectors.toList()));
+		partidoDAO.findAll().stream().map(PartidoConId::toString).forEach(log::trace);
+		
 		context.close();
+	}
+	
+	static Participante getParticipanteRandom(List<Participante> participantes) {
+		int index = ThreadLocalRandom.current().nextInt(0, participantes.size());
+		return participantes.get(index);
+	}
+	
+	static SucesoConId getSucesoRandom(PartidoConId partido) {
+		SucesoConId suceso = new SucesoConId();
+		int index = ThreadLocalRandom.current().nextInt(0, partido.getParticipantes().size());
+		suceso.setParticipante(index == 0 ? partido.getLocal() : partido.getVisitante());
+		return suceso;
 	}
 	
 	@JsonIgnoreProperties(value = { "hashCode" })

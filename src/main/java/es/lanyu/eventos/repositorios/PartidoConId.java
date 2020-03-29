@@ -20,6 +20,12 @@ public class PartidoConId extends Partido {
 		return id;
 	}
 	
+	// Establece la relacion en los dos sentidos
+	public void addSucesoConId(SucesoConId suceso) {
+		super.addSuceso(suceso);
+		suceso.setPartido(this);
+	}
+	
 	// Solo para tener acceso a los campos idLocal e idVisitante
     public String getIdLocal() throws IllegalArgumentException, IllegalAccessException{
     	return ReflectUtils.getCampo(Partido.class, "idLocal", true).get(this).toString();

@@ -22,6 +22,7 @@
                 <value>jpa/AbstractNombrable.orm.xml</value>
                 <value>jpa/Participante.orm.xml</value>
                 <value>jpa/DatableImpl.orm.xml</value>
+                <value>jpa/EventoImpl.orm.xml</value>
                 <value>jpa/Partido.orm.xml</value>
                 <value>jpa/PartidoConId.orm.xml</value>
                 <value>jpa/Sucesos.orm.xml</value>
