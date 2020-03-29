@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import es.lanyu.comun.suceso.SucesoImpl;
 
 //@Entity(name="SUCESOS")
@@ -18,6 +20,7 @@ public class SucesoConId extends SucesoImpl {
 	
 //	@ManyToOne
 //	@JoinColumn(name="ID_PARTIDO", referencedColumnName="ID")
+	@JsonIgnore
 	PartidoConId partido;
 
 	public Long getId() {
@@ -32,10 +35,14 @@ public class SucesoConId extends SucesoImpl {
 		this.partido = partido;
 	}
 
+	public String getIdParticipante(){
+		return idParticipante;
+	}
+
 	@Override
 	public String toString() {
 		return getClass().getSimpleName()
-				+ " #" + getId() + ", participante: " + idParticipante
+				+ " #" + getId() + ", participante: " + getIdParticipante()
 				+ " fecha=" + getTemporal();
 	}
 	
