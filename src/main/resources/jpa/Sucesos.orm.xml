@@ -6,11 +6,20 @@
                  version="1.0">
 
     <mapped-superclass class="es.lanyu.comun.suceso.SucesoImpl" access="FIELD">
-        <table name="SUCESOS"/>
         <attributes>
             <basic name="idParticipante"/>
             <basic name="actor"/>
         </attributes>
     </mapped-superclass>
+
+    <!-- Las interfaces no sirven como entidad
+    <entity class="es.lanyu.comun.suceso.Gol" access="FIELD">
+        <discriminator-value>G</discriminator-value>
+    </entity>
+
+    <entity class="es.lanyu.comun.suceso.Tarjeta" access="FIELD">
+        <discriminator-value>T</discriminator-value>
+    </entity>
+    -->
 
 </entity-mappings>

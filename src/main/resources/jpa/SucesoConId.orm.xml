@@ -7,6 +7,10 @@
 
     <entity class="es.lanyu.eventos.repositorios.SucesoConId" access="FIELD">
         <table name="SUCESOS"/>
+        <!-- No hace falta strategy es el valor por defecto -->
+        <inheritance strategy="SINGLE_TABLE"/>
+        <discriminator-column name="TIPO"/>
+        <discriminator-value>S</discriminator-value>
         <attributes>
             <id name="id">
                 <generated-value strategy="IDENTITY"/>
@@ -16,4 +20,12 @@
             </many-to-one>
         </attributes>
     </entity>
+    
+    <entity class="es.lanyu.eventos.repositorios.TarjetaConId" access="FIELD">
+        <discriminator-value>T</discriminator-value>
+        <attributes>
+            <basic name="tipoTarjeta"/>
+        </attributes>
+    </entity>
+    
 </entity-mappings>

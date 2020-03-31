@@ -25,6 +25,7 @@
                 <value>jpa/EventoImpl.orm.xml</value>
                 <value>jpa/Partido.orm.xml</value>
                 <value>jpa/PartidoConId.orm.xml</value>
+                <!-- Se pueden poner varias entidades en un mismo archivo -->
                 <value>jpa/Sucesos.orm.xml</value>
                 <value>jpa/SucesoConId.orm.xml</value>
             </list>
