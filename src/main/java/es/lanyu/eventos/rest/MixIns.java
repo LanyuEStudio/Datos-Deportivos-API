@@ -18,11 +18,11 @@ public class MixIns {
 	@JsonIgnoreType // Ignora un tipo por completo
 	public static interface IgnorarTipo {}
 	
-	@JsonIgnoreProperties(value = { "resultado", "ganador", //"fecha", // Evento
+	@JsonIgnoreProperties(value = { "resultado", "ganador", "fecha", // Evento
 			"visitante", "participantes", "equipos", // LocalContraVisitante
-			"resultadoYEquipos", //"goles", // EventoConGoles
-			"rojasTotal", "amarillasTotal", //"tarjetas", // EventoConTarjetas
-			"cornersTotal", //"corners", // EventoConCorners
+			"resultadoYEquipos", "goles", // EventoConGoles
+			"rojasTotal", "amarillasTotal", "tarjetas", // EventoConTarjetas
+			"cornersTotal", "corners", // EventoConCorners
 //			"competicion", // Partido
 			"minuto", "minutoActual"}) // ContadorDeMinutos
 	@JsonPropertyOrder({ "idLocal", "idVisitante", "timestamp", "sucesos" })

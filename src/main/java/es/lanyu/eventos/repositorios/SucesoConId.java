@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import es.lanyu.comun.suceso.SucesoImpl;
 
 //@Entity(name="SUCESOS")
@@ -18,9 +16,8 @@ public class SucesoConId extends SucesoImpl {
 //	@GeneratedValue(strategy=GenerationType.AUTO)
 	Long id;
 	
-//	@ManyToOne
+	@ManyToOne
 //	@JoinColumn(name="ID_PARTIDO", referencedColumnName="ID")
-	@JsonIgnore
 	PartidoConId partido;
 
 	public Long getId() {

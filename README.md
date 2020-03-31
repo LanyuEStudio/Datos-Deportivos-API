@@ -38,8 +38,18 @@ A continuación de lo anterior se borra todo el código de ejemplo de Spring bá
 Para continuar desde aquí hay que hacer clone de este repositorio y situarse en el commit correspondiente a la [release v0.0.2](https://github.com/LanyuEStudio/spring-ejemplo-contenedor/releases/tag/v0.0.2). También hay que hacer clone a la misma carpeta de [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) porque es multiproyecto y seguramente se toquen cosas de ese proyecto para comparar resultados. Una vez se tiene eso se ejecuta la tarea `bootRun` desde este proyecto para ver que todas las dependencias se han resuelto. Finalmente se prueba desde el IDE que se use que detecta los tipos del proyecto datos-deportivos (por ejemplo se ve Partido, Participante, Gol, etc... uno cualquiera es suficiente).
 
 Los puntos que se van a ver son:
-1. Entidades (POJO @Entity) y Repositorios (@Repository)
-1. ORM por XML
-1. Data REST (endpoints HATEOAS)
+1. [Entidades (POJO @Entity) y Repositorios (@Repository)](https://hijosdelspectrum.blogspot.com/2020/03/entidades-y-repositorios-con-jpa.html)
+1. ORM por XML(I)
+   1. [De POJO simple](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-de-pojo-simple.html)
+   1. [Con Herencia](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-de-clases-con-herencia.html)
+   1. Con Relación
+      1. [@OneToMany](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-con-relaciones-onetomany.html)
+1. [Data REST](https://www.hijosdelspectrum.com/2020/03/la-potencia-de-spring-data-rest.html) (endpoints HATEOAS)
 1. Personalizar payload con Jackson
+1. ORM por XML(II)
+   1. Herencia con varias subclases
 1. Callbacks y Listeners en JPA
+
+Puedes utilizar esta colección Postman para probarla  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a390ad12b3ffc8e3ef4f)

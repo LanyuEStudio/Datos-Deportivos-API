@@ -1,12 +1,15 @@
 package es.lanyu.eventos.repositorios;
 
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import es.lanyu.commons.reflect.ReflectUtils;
 import es.lanyu.comun.evento.Partido;
+import es.lanyu.comun.suceso.Suceso;
 import es.lanyu.participante.Participante;
 
 //@Entity(name="PARTIDOS")
@@ -18,6 +21,12 @@ public class PartidoConId extends Partido {
 
 	public Long getId() {
 		return id;
+	}
+	
+	@Override
+	@OneToMany(targetEntity=SucesoConId.class)
+	public Collection<Suceso> getSucesos() {
+		return super.getSucesos();
 	}
 	
 	// Establece la relacion en los dos sentidos
