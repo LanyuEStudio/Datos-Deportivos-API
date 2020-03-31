@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 import es.lanyu.comun.evento.Partido;
+import es.lanyu.comun.suceso.Gol;
 import es.lanyu.comun.suceso.Suceso;
 import es.lanyu.eventos.repositorios.SucesoConId;
 import es.lanyu.eventos.rest.MixIns;
@@ -34,6 +35,7 @@ public class ConfiguracionPorJava {
 		mapper.addMixIn(Partido.class, MixIns.Partidos.class);
 		// Incluido sobre las interfaces
 		mapper.addMixIn(Suceso.class, MixIns.Sucesos.class);
+		mapper.addMixIn(Gol.class, MixIns.Goles.class);
 		
 		// Aqui no se conserva toda la configuracion (se contruye)
 		// Esta si porque no se sobrescribe
@@ -67,6 +69,7 @@ public class ConfiguracionPorJava {
                 jacksonObjectMapperBuilder.mixIn(Participante.class, MixIns.Participantes.class);
                 jacksonObjectMapperBuilder.mixIn(Partido.class, MixIns.Partidos.class);
                 jacksonObjectMapperBuilder.mixIn(SucesoConId.class, MixIns.Sucesos.class);
+                jacksonObjectMapperBuilder.mixIn(Gol.class, MixIns.Goles.class);
 
                 // Aqui se aplica toda la configuracion (es un metodo)
                 jacksonObjectMapperBuilder.visibility(PropertyAccessor.FIELD, Visibility.ANY);
