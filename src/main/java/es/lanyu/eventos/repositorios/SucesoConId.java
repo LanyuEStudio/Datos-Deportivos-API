@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import es.lanyu.commons.servicios.entidad.ServicioEntidad;
 import es.lanyu.comun.suceso.SucesoImpl;
 
 //@Entity(name="SUCESOS")
@@ -35,11 +36,17 @@ public class SucesoConId extends SucesoImpl {
 	public String getIdParticipante(){
 		return idParticipante;
 	}
-
+	
+	public SucesoConId() {}
+	
+	public SucesoConId(ServicioEntidad servicioEntidad) {
+		this.servicioEntidad = servicioEntidad;
+	}
+	
 	@Override
 	public String toString() {
 		return getClass().getSimpleName()
-				+ " #" + getId() + ", participante: " + getIdParticipante()
+				+ " #" + getId() + ", participante: " + getParticipante()
 				+ " fecha=" + getTemporal();
 	}
 	

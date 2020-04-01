@@ -13,16 +13,28 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import es.lanyu.commons.servicios.entidad.ServicioEntidad;
+import es.lanyu.commons.servicios.entidad.ServicioEntidadImpl;
 import es.lanyu.comun.evento.Partido;
 import es.lanyu.comun.suceso.Gol;
 import es.lanyu.comun.suceso.Suceso;
 import es.lanyu.eventos.repositorios.SucesoConId;
 import es.lanyu.eventos.rest.MixIns;
 import es.lanyu.participante.Participante;
+import es.lanyu.participante.repositorios.ParticipanteDAO;
 
 @Configuration
 @PropertySource({ "classpath:config/rest.properties", "classpath:config/jackson.properties" })
 public class ConfiguracionPorJava {
+	
+	@Bean
+	public ServicioEntidad getServicioEntidad(ParticipanteDAO participanteDAO){
+		ServicioEntidad servicioEntidad = new ServicioEntidadImpl();
+		participanteDAO.findAll()
+			.forEach(p -> servicioEntidad.getGestorNombrables().addNombrable(Participante.class, p));
+		
+		return servicioEntidad;
+	}
 	
 	@Bean
 	// Tambien se le aplican las propiedades de jackson aunque se use new ObjectMapper()
