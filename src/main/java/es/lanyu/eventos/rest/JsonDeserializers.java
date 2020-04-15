@@ -3,6 +3,8 @@ package es.lanyu.eventos.rest;
 import java.io.IOException;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jackson.JsonComponent;
 
@@ -15,13 +17,16 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import es.lanyu.commons.servicios.entidad.ServicioEntidad;
 import es.lanyu.comun.suceso.TarjetaImpl.TipoTarjeta;
 import es.lanyu.eventos.repositorios.GolConId;
+import es.lanyu.eventos.repositorios.PartidoConId;
 import es.lanyu.eventos.repositorios.PartidoDAO;
 import es.lanyu.eventos.repositorios.SucesoConId;
 import es.lanyu.eventos.repositorios.TarjetaConId;
+import es.lanyu.participante.Participante;
 
 @JsonComponent // Registra la clase/clases internas con (de)serializadores
 // Ver https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-json-components
 public class JsonDeserializers {
+	private static Logger log = LoggerFactory.getLogger(JsonDeserializers.class);
 	
 	public static ServicioEntidad servicioEntidad;
 	public static PartidoDAO partidoDAO;
@@ -101,6 +106,45 @@ public class JsonDeserializers {
 			return sucesoDeserializado;
 		}
 
+	}
+	
+	@SuppressWarnings("serial")
+	public static class JsonPartidoSerializer extends StdDeserializer<PartidoConId> {
+
+		public JsonPartidoSerializer() {
+			this(PartidoConId.class);
+		}
+
+		public JsonPartidoSerializer(Class<PartidoConId> vc) {
+			super(vc);
+		}
+
+		@Override
+		public PartidoConId deserialize(JsonParser jsonParser, DeserializationContext context)
+				throws IOException, JsonProcessingException {
+			PartidoConId partidoDeserializado;
+			try {
+				String[] participantes = new String[2];
+				JsonNode nodo = jsonParser.getCodec().readTree(jsonParser);
+				Optional.ofNullable(nodo.get("idLocal")).ifPresent(n -> participantes[0] = n.asText());
+				Optional.ofNullable(nodo.get("idVisitante")).ifPresent(n -> participantes[1] = n.asText());
+				PartidoConId partido = new PartidoConId(
+						servicioEntidad.getIdentificable(Participante.class, participantes[0]),
+						servicioEntidad.getIdentificable(Participante.class, participantes[1]));
+				Optional.ofNullable(nodo.get("timestamp")).ifPresent(n -> partido.setTimestamp(n.asLong()));
+				partido.setServicioEntidad(servicioEntidad);
+
+				partidoDeserializado = partido;
+			} catch (Exception e) {
+				e.printStackTrace();
+				partidoDeserializado = null;
+			}
+
+			log.trace("Deserializado Partido: " + partidoDeserializado);
+			
+			return partidoDeserializado;
+		}
+		
 	}
 
 }
