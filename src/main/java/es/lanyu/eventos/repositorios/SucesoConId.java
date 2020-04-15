@@ -40,6 +40,10 @@ public class SucesoConId extends SucesoImpl {
 	public String getIdParticipante(){
 		return idParticipante;
 	}
+
+	public void setIdParticipante(String idParticipante){
+		this.idParticipante = idParticipante;
+	}
 	
 	public SucesoConId() {}
 	

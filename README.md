@@ -35,20 +35,23 @@ El código hasta este punto está etiquetado en la [release v0.0.1](https://gith
 ### Pasando a supuesto de Datos Deportivos
 A continuación de lo anterior se borra todo el código de ejemplo de Spring básico y se añade la dependencia [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) para continuar con persistencia con JPA, Spring Data REST para ofrecer una API RESTful HATEOAS, formateo de salida con Jackson y Entity Listener. Se ven distintos ejemplos en la forma de hacerlo (XML, Configuración Java y Anotaciones).
 
-Para continuar desde aquí hay que hacer clone de este repositorio y situarse en el commit correspondiente a la [release v0.0.2](https://github.com/LanyuEStudio/spring-ejemplo-contenedor/releases/tag/v0.0.2). También hay que hacer clone a la misma carpeta de [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) porque es multiproyecto y seguramente se toquen cosas de ese proyecto para comparar resultados. Una vez se tiene eso se ejecuta la tarea `bootRun` desde este proyecto para ver que todas las dependencias se han resuelto. Finalmente se prueba desde el IDE que se use que detecta los tipos del proyecto datos-deportivos (por ejemplo se ve Partido, Participante, Gol, etc... uno cualquiera es suficiente).
+Para continuar desde aquí hay que hacer clone de este repositorio y situarse en el commit correspondiente a la [release v0.0.2](https://github.com/LanyuEStudio/spring-ejemplo-contenedor/releases/tag/v0.0.2). También hay que hacer clone a la misma carpeta de [datos-deportivos](https://github.com/LanyuEStudio/datos-deportivos) porque es multiproyecto y seguramente se toquen cosas de ese proyecto para comparar resultados. Una vez se tiene eso se ejecuta la tarea `bootRun` desde este proyecto para ver que todas las dependencias se han resuelto. Finalmente se prueba desde el IDE que se use que detecta los tipos del proyecto datos-deportivos (por ejemplo se ve `Partido`, `Participante`, `Gol`, etc... uno cualquiera es suficiente).
 
 Los puntos que se van a ver son:
-1. [Entidades (POJO @Entity) y Repositorios (@Repository)](https://hijosdelspectrum.blogspot.com/2020/03/entidades-y-repositorios-con-jpa.html)
+1. [Entidades (POJO `@Entity`) y Repositorios (`@Repository`)](https://hijosdelspectrum.blogspot.com/2020/03/entidades-y-repositorios-con-jpa.html)
 1. ORM por XML(I)
    1. [De POJO simple](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-de-pojo-simple.html)
    1. [Con Herencia](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-de-clases-con-herencia.html)
    1. Con Relación
-      1. [@OneToMany](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-con-relaciones-onetomany.html)
+      1. [`@OneToMany`](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-con-relaciones-onetomany.html)
 1. [Data REST](https://www.hijosdelspectrum.com/2020/03/la-potencia-de-spring-data-rest.html) (endpoints HATEOAS)
 1. Personalizar payload con Jackson
 1. ORM por XML(II)
-   1. Herencia con varias subclases
+   1. [Herencia con varias subclases](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-guardar-subclases-en.html)
 1. Callbacks y Listeners en JPA
+   1. `@PostLoad` para inyectar un bean
+1. Deserializado de payload con `@JsonComponent`
+   1. Inyectando bean con `JsonDeserializer`
 
 Puedes utilizar esta colección Postman para probarla  
 

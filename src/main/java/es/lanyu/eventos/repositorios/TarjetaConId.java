@@ -14,6 +14,10 @@ public class TarjetaConId extends SucesoConId implements Tarjeta {
 		return tipoTarjeta;
 	}
 
+	public void setTipoTarjeta(TipoTarjeta tipoTarjeta) {
+		this.tipoTarjeta = tipoTarjeta;
+	}
+
 	public TarjetaConId() {}
 	
 	public TarjetaConId(ServicioEntidad servicioEntidad) {
