@@ -52,17 +52,8 @@ public class PartidoConId extends Partido {
 	}
 
 	@Override
-	// toString provisional para evitar null al buscar ServicioEntidad
 	public String toString() {
-		String string;
-		try {
-			string = getIdLocal() + " vs " + getIdVisitante() + " => " + getSucesos();
-		} catch (IllegalArgumentException | IllegalAccessException e) {
-			e.printStackTrace();
-			string = "Participantes N/D => " + getSucesos();
-		}
-		return string;
-//		return "#" + id + " => " + detallesDelPartido();
+		return "#" + id + " => " + detallesDelPartido();
 	}
 	
 }

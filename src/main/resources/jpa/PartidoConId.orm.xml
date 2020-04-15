@@ -7,6 +7,12 @@
 
     <entity name="partido" class="es.lanyu.eventos.repositorios.PartidoConId" access="FIELD">
         <table name="PARTIDOS"/>
+        <entity-listeners>
+            <entity-listener class="es.lanyu.eventos.repositorios.PartidoListener">
+                <post-load method-name="setServicioEntidadEnPartido"/>
+                <pre-remove method-name="antesDeBorrar"/>
+            </entity-listener>
+        </entity-listeners>
         <attributes>
             <id name="id">
                 <generated-value strategy="IDENTITY"/>
