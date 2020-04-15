@@ -2,6 +2,7 @@ package es.lanyu.datosdeportivosapi;
 
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
@@ -25,6 +26,7 @@ import es.lanyu.participante.repositorios.ParticipanteDAO;
 
 @Configuration
 @PropertySource({ "classpath:config/rest.properties", "classpath:config/jackson.properties" })
+@ComponentScan("es.lanyu.eventos") // Para registrar JsonSerializers
 public class ConfiguracionPorJava {
 	
 	@Bean
