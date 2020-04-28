@@ -23,7 +23,7 @@ public class PartidoListener {
 //	@PostLoad
 	void setServicioEntidadEnPartido(PartidoConId partido) {
 		partido.setServicioEntidad(servicioEntidad);
-		log.trace("@PostLoad Partido: " + partido);
+//		log.trace("@PostLoad Partido: " + partido);
 	}
 
 //	@PreRemove
