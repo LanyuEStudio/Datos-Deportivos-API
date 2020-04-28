@@ -12,7 +12,8 @@ import org.springframework.stereotype.Repository;
 @RepositoryRestResource(path="partidos", // indica la parte de la URL para este recurso
                         itemResourceRel="partido", // nombre cuando se hace referencia a un partido
                         collectionResourceRel="partidos") // nombre cuando se hace referencia a varios partidos
-public interface PartidoDAO extends JpaRepository<PartidoConId, Long> {
+// Se construye por fragmentos de las distintas implementaciones: ver PartidoDAOImpl
+public interface PartidoDAO extends JpaRepository<PartidoConId, Long>, EventoDAOCustom<PartidoConId> {
 
     @RestResource(path="participante")
     List<PartidoConId> findByIdLocalOrIdVisitante(@Param("idParticipante") String idLocal, @Param("idParticipante") String idVisitante);
