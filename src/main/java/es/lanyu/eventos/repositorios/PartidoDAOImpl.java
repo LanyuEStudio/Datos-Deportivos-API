@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,8 +13,9 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import es.lanyu.commons.servicios.entidad.ServicioEntidad;
+import es.lanyu.commons.string.StringUtils;
 import es.lanyu.participante.Participante;
-import es.lanyu.participante.repositorios.ParticipanteDAO;
 
 // Ver: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#transactions
 @Transactional(readOnly = true)
@@ -26,15 +28,17 @@ import es.lanyu.participante.repositorios.ParticipanteDAO;
 class PartidoDAOImpl implements EventoDAOCustom<PartidoConId> {
 
     @Autowired
-    ParticipanteDAO participanteDAO;
+    ServicioEntidad servicioEntidad;
 
     @PersistenceContext
     EntityManager entityManager;
 
     @Override
     public List<PartidoConId> getEventosConParticipanteConTexto(String txt) {
-        // Reutilizo los metodos que ya tengo disponibles
-        List<Participante> participantes = participanteDAO.findByNombreIgnoreCaseContaining(txt);
+        String txtUpper = StringUtils.eliminarTildes(txt).toUpperCase();
+        List<Participante> participantes = servicioEntidad.getElementosRegistradosDe(Participante.class).stream()
+                    .filter(p -> StringUtils.eliminarTildes(p.getNombre()).toUpperCase().contains(txtUpper))
+                    .collect(Collectors.toList());
         // Para que no se repitan partidos
         Set<PartidoConId> partidos = new HashSet<PartidoConId>();
         Query query = entityManager.createNativeQuery(
@@ -48,5 +52,5 @@ class PartidoDAOImpl implements EventoDAOCustom<PartidoConId> {
 
         return new ArrayList<PartidoConId>(partidos);
     }
-
+    
 }
