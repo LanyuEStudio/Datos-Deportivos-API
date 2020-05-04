@@ -22,10 +22,10 @@ public interface SucesoDAO extends JpaRepository<SucesoConId, Long> {
 	@RestResource(path="entre-fechas")
 	List<SucesoConId> findByTemporalBetween(Instant comienzo, Instant fin);
 	
-	@RestResource(path="participante-entre-fechas", exported=false)
+	@RestResource(exported=false)
 	List<SucesoConId> findByIdParticipanteAndTemporalBetween(String idParticipante, Instant comienzo, Instant fin);
 	
 	@RestResource(path="despues-de")
-	List<SucesoConId> findByTemporalAfter(@Param("start") Instant instant);
+	List<SucesoConId> findByTemporalAfter(@Param("comienzo") Instant instant);
 	
 }
