@@ -76,6 +76,8 @@ Mejor desde una consola para ver el log `java -jar datosdeportivosapi-VERSION.ja
 
 Para conseguir este `.jar` lo mejor es [seguir los pasos indicados en el blog](https://www.hijosdelspectrum.com/2020/05/empaquetar-la-api-en-un-ficherojar.html).
 
-Puedes utilizar esta colección Postman para probarla  
+Puedes ver la [documentación de la API en Postman](https://documenter.getpostman.com/view/9800655/Szme3dFP?version=latest) y usar el [deploy en Heroku](https://github.com/LanyuEStudio/Datos-Deportivos-API/deployments) para probarlo directamente. Para [Heroku](https://www.heroku.com/) tener en cuenta que:
+1. El servicio hiberna despúes 30 minutos sin usar y tardará un poco más en la primera petición
+1. Usar el environment `Heroku` de Postman
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a390ad12b3ffc8e3ef4f)
