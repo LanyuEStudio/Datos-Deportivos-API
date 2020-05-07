@@ -1,5 +1,5 @@
 # Crea tu API (Datos Deportivos API)
-Este repositorio sirve para controlar el código del curso **["Crea tu API"](https://hijosdelspectrum.blogspot.com/p/spring-framework-crear-una-api.html)**
+Este repositorio sirve para realizar el código del curso **["Crea tu API"](https://hijosdelspectrum.blogspot.com/p/spring-framework-crear-una-api.html)**
 
 ## Contenido
 Se generó un proyecto [gradle](https://gradle.org/) usando [Spring Initialzr](https://start.spring.io/) con la siguiente configuración:
@@ -46,12 +46,35 @@ Los puntos que se van a ver son:
       1. [`@OneToMany`](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-con-relaciones-onetomany.html)
 1. [Data REST](https://www.hijosdelspectrum.com/2020/03/la-potencia-de-spring-data-rest.html) (endpoints HATEOAS)
 1. Personalizar payload con Jackson
-1. ORM por XML(II)
-   1. [Herencia con varias subclases](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-guardar-subclases-en.html)
-1. Callbacks y Listeners en JPA
-   1. `@PostLoad` para inyectar un bean
-1. Deserializado de payload con `@JsonComponent`
-   1. Inyectando bean con `JsonDeserializer`
+1. ORM por XML (II)
+   1. Herencia con varias subclases ([SINGLE TABLE](https://www.hijosdelspectrum.com/2020/03/orm-por-xml-guardar-subclases-en.html))
+1. Inyectar bean en objetos no gestionados
+   1. En [entidades leídas desde BD](https://www.hijosdelspectrum.com/2020/04/inyectar-un-bean-una-entidad-leida.html) (`Events` y `Listeners` en JPA)
+   1. En objetos [desde las peticiones HTTP](https://www.hijosdelspectrum.com/2020/04/inyectar-un-bean-un-restresource.html) (`@JsonComponent`)
+1. Añadir código personalizado
+   1. [Personalizar endpoints con `@RestResource`](https://www.hijosdelspectrum.com/2020/04/personalizar-endpoints-con-restresource.html)
+   1. Añadir [método personalizado](https://www.hijosdelspectrum.com/2020/04/anadir-metodo-personalizado-en.html) a repositorio
+   1. [Exponer método con `@RepositoryRestController`](https://www.hijosdelspectrum.com/2020/04/exponer-metodo-con-repositoryrestcontro.html)
+   1. Añadir [link a endpoint `/search`](https://www.hijosdelspectrum.com/2020/05/anadir-link-resourcessearch.html)
+   1. [Ruta con `@PathVariable`](https://www.hijosdelspectrum.com/2020/05/rutas-con-pathvariable.html)
+   1. [Detección automática de links](https://www.hijosdelspectrum.com/2020/05/codigo-util-clase-configuracionrest.html) con `ConfiguracionRest`
+
+
+## Despliegue en local
+
+Antes de arrancar la API se debe arrancar la BD. Se usa [H2](https://h2database.com/html/main.html) en modo servidor.
+Se puede levantar la BD usando el archivo `h2-version.jar`. Comprobar que tenemos acceso a la consola de H2 y que está corriendo.
+
+Las propiedades de conexión son las que vienen por defecto:
+> url=jdbc:h2:tcp://localhost/~/test  
+username=sa  
+(sin password)
+
+Entonces ejecutar la API con la última [release](https://github.com/LanyuEStudio/Datos-Deportivos-API/releases).
+
+Mejor desde una consola para ver el log `java -jar datosdeportivosapi-VERSION.jar`.
+
+Para conseguir este `.jar` lo mejor es [seguir los pasos indicados en el blog](https://www.hijosdelspectrum.com/2020/05/empaquetar-la-api-en-un-ficherojar.html).
 
 Puedes utilizar esta colección Postman para probarla  
 

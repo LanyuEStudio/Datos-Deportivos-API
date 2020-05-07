@@ -1,19 +1,10 @@
 package es.lanyu.datosdeportivosapi;
 
-import java.lang.reflect.Method;
-import java.net.URI;
-import java.net.URISyntaxException;
-
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
-import org.springframework.data.rest.webmvc.RepositorySearchesResource;
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.server.RepresentationModelProcessor;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
@@ -28,10 +19,8 @@ import es.lanyu.commons.servicios.entidad.ServicioEntidadImpl;
 import es.lanyu.comun.evento.Partido;
 import es.lanyu.comun.suceso.Gol;
 import es.lanyu.comun.suceso.Suceso;
-import es.lanyu.eventos.repositorios.PartidoConId;
 import es.lanyu.eventos.repositorios.SucesoConId;
 import es.lanyu.eventos.rest.MixIns;
-import es.lanyu.eventos.rest.PartidoController;
 import es.lanyu.participante.Participante;
 import es.lanyu.participante.repositorios.ParticipanteDAO;
 
@@ -39,39 +28,6 @@ import es.lanyu.participante.repositorios.ParticipanteDAO;
 @PropertySource({ "classpath:config/rest.properties", "classpath:config/jackson.properties" })
 @ComponentScan("es.lanyu.eventos")
 public class ConfiguracionPorJava {
-    
-    @Bean
-    // Enlace con un par de formas (version antigua) de poner links en /search: https://stackoverflow.com/a/36007306
-    RepresentationModelProcessor<RepositorySearchesResource> searchLinks(RepositoryRestConfiguration config) {
-        return new RepresentationModelProcessor<RepositorySearchesResource>() {
-
-            @Override
-            public RepositorySearchesResource process(RepositorySearchesResource searchResource) {
-                // Esto se ejecuta para cualquier /search con lo que hay que filtrar cuando se usa
-                if (searchResource.getDomainType().equals(PartidoConId.class)) {
-                    try {
-                        String nombreMetodo = "getPartidosConParticipanteComo";
-                        // https://docs.spring.io/spring-hateoas/docs/1.0.0.M1/reference/html/#fundamentals.obtaining-links.builder.methods
-                        Method method = PartidoController.class.getMethod(nombreMetodo, String.class,
-                                PersistentEntityResourceAssembler.class);
-                        URI uri = org.springframework.hateoas.server.mvc.WebMvcLinkBuilder
-                                .linkTo(method, null, null).toUri();
-                        // Lamentablemente no coge el basePath y hay que implementar esa parte
-                        // Sacado de: https://github.com/spring-projects/spring-hateoas-examples/tree/master/ //
-                        // spring-hateoas-and-spring-data-rest#altering-what-spring-data-rest-is-serving
-                        String url = new URI(uri.getScheme(), uri.getUserInfo(), uri.getHost(), uri.getPort(),
-                                config.getBasePath() + uri.getPath(), uri.getQuery(), uri.getFragment()).toString();
-                        searchResource.add(new Link(url + "{?txt}", nombreMetodo));
-                    } catch (NoSuchMethodException | URISyntaxException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                return searchResource;
-            }
-
-        };
-    }
 
 	@Bean
 	public ServicioEntidad getServicioEntidad(ParticipanteDAO participanteDAO){

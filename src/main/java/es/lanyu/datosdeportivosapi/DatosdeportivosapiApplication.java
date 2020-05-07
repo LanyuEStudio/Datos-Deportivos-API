@@ -44,10 +44,10 @@ public class DatosdeportivosapiApplication {
 //		participantes.stream().map(Participante::toString).forEach(log::trace);
 		
 		// Listo los partidos en consola
-		PartidoDAO partidoDAO = context.getBean(PartidoDAO.class);
+//		PartidoDAO partidoDAO = context.getBean(PartidoDAO.class);
 //		partidoDAO.findAll().stream().map(PartidoConId::toString).forEach(log::trace);
 		
-		partidoDAO.getEventosConParticipanteConTexto("m").stream().map(PartidoConId::toString).forEach(log::trace);
+//		partidoDAO.getEventosConParticipanteConTexto("m").stream().map(PartidoConId::toString).forEach(log::trace);
 		// Ya no cierro la aplicacion
 //		context.close();
 	}
