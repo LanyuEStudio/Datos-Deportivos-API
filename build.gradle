@@ -28,3 +28,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+task cloneJvmProfile {
+    ext.profile = System.getProperty("spring.profiles.active")
+    if (profile != null) {
+        println "Setting $profile profile in bootRun"
+        bootRun.systemProperties.put("spring.profiles.active", profile)
+    }
+}
