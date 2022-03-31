@@ -1,12 +1,15 @@
 package es.lanyu.eventos.rest;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.data.rest.webmvc.PersistentEntityResource;
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,5 +37,25 @@ public class PartidoController {
 
 		return assembler.toCollectionModel(partidos);
 	}
+	
+  	@GetMapping("/participante/{id}")
+  	@ResponseBody
+  	public CollectionModel<PersistentEntityResource> getPartidosParticipanteLocalVisitante(@PathVariable String id,
+  	        @RequestParam Optional<Boolean> local,
+  	        PersistentEntityResourceAssembler assembler) {
+  	    List<PartidoConId> partidos = partidoDAO.findByIdLocalOrIdVisitante(id, id).stream()
+  	        .filter(p -> {
+  	            boolean filtro = false;
+                try {
+                    filtro = local.orElse(true) ? p.getIdLocal().equals(id) : p.getIdVisitante().equals(id);
+                } catch (IllegalAccessException e) {
+                  e.printStackTrace();
+                }
+                return filtro;
+            })
+  	        .collect(Collectors.toList());
+
+        return assembler.toCollectionModel(partidos);
+    }
 	
 }
