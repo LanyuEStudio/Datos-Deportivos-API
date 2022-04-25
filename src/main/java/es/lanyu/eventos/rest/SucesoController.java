@@ -9,7 +9,6 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,7 +16,6 @@ import es.lanyu.eventos.repositorios.SucesoConId;
 import es.lanyu.eventos.repositorios.SucesoDAO;
 
 @RepositoryRestController
-@RequestMapping(path = "/sucesos/search")
 public class SucesoController {
 
     private SucesoDAO sucesoDAO;
@@ -26,7 +24,7 @@ public class SucesoController {
         this.sucesoDAO = sucesoDAO;
     }
 
-    @GetMapping("/participante/{id}/entre-fechas")
+    @GetMapping("/sucesos/search/participante/{id}/entre-fechas")
     @ResponseBody
     public CollectionModel<PersistentEntityResource> getSucesosConIdParticipanteEntreFechas(
             @PathVariable("id") String id, @RequestParam Instant comienzo, @RequestParam Instant fin,

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
-                                     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
-                 version="1.0">
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+                                     http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+                 version="2.2">
 
     <entity name="partido" class="es.lanyu.eventos.repositorios.PartidoConId" access="FIELD">
         <table name="PARTIDOS"/>
         <entity-listeners>
             <entity-listener class="es.lanyu.eventos.repositorios.PartidoListener">
-                <post-load method-name="setServicioEntidadEnPartido"/>
                 <pre-remove method-name="antesDeBorrar"/>
+                <post-load method-name="setServicioEntidadEnPartido"/>
             </entity-listener>
         </entity-listeners>
         <attributes>

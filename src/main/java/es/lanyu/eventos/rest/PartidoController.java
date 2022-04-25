@@ -10,7 +10,6 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,7 +19,6 @@ import es.lanyu.eventos.repositorios.PartidoDAO;
 // Si se quiere inyectar PersistentEntityResourceAssembler hace falta
 // marcar el controlador con @RepositoryRestController
 @RepositoryRestController
-@RequestMapping(path="/partidos/search")
 public class PartidoController {
     
 	private PartidoDAO partidoDAO;
@@ -29,7 +27,7 @@ public class PartidoController {
         this.partidoDAO = partidoDAO;
     }
 	
-	@GetMapping("/con-nombre-participante")
+	@GetMapping("/partidos/search/con-nombre-participante")
 	@ResponseBody
 	public CollectionModel<PersistentEntityResource> getPartidosConParticipanteComo(@RequestParam String txt,
 			PersistentEntityResourceAssembler assembler) {
@@ -38,7 +36,7 @@ public class PartidoController {
 		return assembler.toCollectionModel(partidos);
 	}
 	
-  	@GetMapping("/participante/{id}")
+  	@GetMapping("/partidos/search/participante/{id}")
   	@ResponseBody
   	public CollectionModel<PersistentEntityResource> getPartidosParticipanteLocalVisitante(@PathVariable String id,
   	        @RequestParam Optional<Boolean> local,

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
-                                     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
-                 version="1.0">
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+                                     http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+                 version="2.2">
 
     <entity class="es.lanyu.eventos.repositorios.SucesoConId" access="FIELD">
         <table name="SUCESOS"/>
         <!-- No hace falta strategy es el valor por defecto -->
         <inheritance strategy="SINGLE_TABLE"/>
-        <discriminator-column name="TIPO"/>
         <discriminator-value>S</discriminator-value>
+        <discriminator-column name="TIPO"></discriminator-column>
         <attributes>
             <id name="id">
                 <generated-value strategy="IDENTITY"/>
             </id>
             <many-to-one name="partido" optional="false"><!-- fetch="LAZY">-->
-                <join-column name="ID_PARTIDO" referencedColumnName="ID"/>
+                <join-column name="ID_PARTIDO" referenced-column-name="ID"/>
             </many-to-one>
         </attributes>
     </entity>

@@ -1,11 +1,11 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.5.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
 group = 'es.lanyu'
-version = '1.0.0'
+version = '1.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -20,19 +20,9 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'com.github.LanyuEStudio:datos-deportivos:v1.0.0'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-test {
+tasks.named('test') {
 	useJUnitPlatform()
-}
-
-task cloneJvmProfile {
-    ext.profile = System.getProperty("spring.profiles.active")
-    if (profile != null) {
-        println "Setting $profile profile in bootRun"
-        bootRun.systemProperties.put("spring.profiles.active", profile)
-    }
 }
