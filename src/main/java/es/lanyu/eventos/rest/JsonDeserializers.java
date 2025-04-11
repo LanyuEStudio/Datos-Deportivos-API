@@ -40,7 +40,7 @@ public class JsonDeserializers {
 	@SuppressWarnings("serial")
 	public static class JsonSucesoSerializer<T extends SucesoConId> extends StdDeserializer<T> {
 
-		public JsonSucesoSerializer() {
+        public JsonSucesoSerializer() {
 			this((Class<T>) SucesoConId.class);
 		}
 
@@ -48,7 +48,7 @@ public class JsonDeserializers {
 			super(vc);
 		}
 
-		@Override
+        @Override
 		public T deserialize(JsonParser jsonParser, DeserializationContext context)
 				throws IOException, JsonProcessingException {
 			return deserializarSuceso(jsonParser, (Class<T>) handledType());
@@ -69,7 +69,7 @@ public class JsonDeserializers {
 				Optional.ofNullable(nodo.get("partido")).ifPresent(n -> {
 					String idPartido = n.asText();
 					idPartido = idPartido.substring(idPartido.lastIndexOf("/") + 1, idPartido.length());
-					suceso.setPartido(partidoDAO.getOne(Long.parseLong(idPartido)));
+					suceso.setPartido(partidoDAO.getReferenceById(Long.parseLong(idPartido)));
 				});
 				postDeserializarSuceso(nodo, suceso);
 

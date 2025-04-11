@@ -27,7 +27,8 @@ public class SucesoController {
     @GetMapping("/sucesos/search/participante/{id}/entre-fechas")
     @ResponseBody
     public CollectionModel<PersistentEntityResource> getSucesosConIdParticipanteEntreFechas(
-            @PathVariable("id") String id, @RequestParam Instant comienzo, @RequestParam Instant fin,
+            // Ahora el descubrimiento indica el nombre del RequestParam si existe en vez del nombre del parametro
+            @PathVariable("id") String id, @RequestParam("inicio") Instant comienzo, @RequestParam Instant fin,
             PersistentEntityResourceAssembler assembler) {
         List<SucesoConId> sucesos = sucesoDAO.findByIdParticipanteAndTemporalBetween(id, comienzo, fin);
 

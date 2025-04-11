@@ -1,9 +1,9 @@
 package es.lanyu.eventos.repositorios;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
 import es.lanyu.commons.servicios.entidad.ServicioEntidad;
 import es.lanyu.comun.suceso.Gol;

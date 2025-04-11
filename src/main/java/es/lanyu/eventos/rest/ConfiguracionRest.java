@@ -65,23 +65,29 @@ public class ConfiguracionRest {
                     Method[] metodos = controller.getDeclaredMethods();
                     URI uriController = linkTo(controller).toUri();
                     String controllerPath = config.getBasePath() + uriController.getPath();
-                    for (Method m : metodos) {
-                        if (!m.isAnnotationPresent(ResponseBody.class) || !m.isAnnotationPresent(GetMapping.class)) {
-                            continue;
-                        }
-                        try {
-                            String pathMetodo = String.join("", m.getAnnotation(GetMapping.class).value());
-                            String pathRecurso = new URI(uriController.getScheme(), uriController.getUserInfo(), uriController.getHost(),
-                                                         uriController.getPort(), controllerPath + pathMetodo, null, null).toString();
-                            String requestParams = Stream.of(m.getParameters())
-                                                         .filter(p -> p.isAnnotationPresent(RequestParam.class))
-                                                         .map(Parameter::getName)
-                                                         .collect(Collectors.joining(","));
-                            searchResource.add(Link.of(URLDecoder.decode(pathRecurso, "UTF-8") + "{?" + requestParams + "}", m.getName()));
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
+                    Stream.of(metodos)
+                        .filter(m -> m.isAnnotationPresent(ResponseBody.class) && m.isAnnotationPresent(GetMapping.class))
+                        .map(m -> {
+                            Link link = null;
+                            try {
+                                String pathMetodo = String.join("", m.getAnnotation(GetMapping.class).value());
+                                String pathRecurso = new URI(uriController.getScheme(), uriController.getUserInfo(), uriController.getHost(),
+                                                             uriController.getPort(), controllerPath + pathMetodo, null, null).toString();
+                                String requestParams = Stream.of(m.getParameters())
+                                                             .filter(p -> p.isAnnotationPresent(RequestParam.class))
+                                                             .map(p -> {
+                                                                   String nombreParametro = p.getAnnotation(RequestParam.class).value();
+                                                                   return !"".equals(nombreParametro) ? nombreParametro : p.getName();
+                                                                 })
+                                                             .collect(Collectors.joining(","));
+                                link = Link.of(URLDecoder.decode(pathRecurso, "UTF-8") + "{?" + requestParams + "}", m.getName());
+                            } catch (Exception e) {
+                               e.printStackTrace();
+                            }
+                            return link;
+                        })
+                        .filter(l -> l != null)
+                        .forEach(searchResource::add);
                 }
 
                 return searchResource;
